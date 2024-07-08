@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "bcf7ff7d-0d4a-4f3b-8ab8-d44368f8b51f",
+		"name": "receipts-processor-challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21328393"
+	},
+	"item": [
+		{
+			"name": "process",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"retailer\": \"Target\",\r\n  \"purchaseDate\": \"2022-01-01\",\r\n  \"purchaseTime\": \"13:01\",\r\n  \"items\": [\r\n    {\r\n      \"shortDescription\": \"Mountain Dew 12PK\",\r\n      \"price\": \"6.49\"\r\n    },{\r\n      \"shortDescription\": \"Emils Cheese Pizza\",\r\n      \"price\": \"12.25\"\r\n    },{\r\n      \"shortDescription\": \"Knorr Creamy Chicken\",\r\n      \"price\": \"1.26\"\r\n    },{\r\n      \"shortDescription\": \"Doritos Nacho Cheese\",\r\n      \"price\": \"3.35\"\r\n    },{\r\n      \"shortDescription\": \"   Klarbrunn 12-PK 12 FL OZ  \",\r\n      \"price\": \"12.00\"\r\n    }\r\n  ],\r\n  \"total\": \"35.35\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/receipts/process",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"receipts",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-points",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/receipts/:id/points",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"receipts",
+						":id",
+						"points"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
